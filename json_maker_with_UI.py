@@ -60,11 +60,10 @@ def convert():
 
 
     text = request.json['text']
-    # Here you can make a request to the Python function
-    # For demonstration purposes, I'm just returning the input text as JSON
+    
     placeholders = extract_placeholders(docx_content)
     json_string = create_json_from_placeholders(placeholders)
-    # print(json_string)
+    
     return json_string
 
 if __name__ == '__main__':
