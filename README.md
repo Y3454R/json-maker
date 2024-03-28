@@ -1,8 +1,8 @@
 # json-maker
-Python version: ^3.0.0
+
 A tool to create a json string by converting all the placeholders of a docx file.
 To use with UI in linax:
-
+#### python version: Python 3.10.12
 #### install  flask:
 install pip: ```curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py``` <br/>
 ```python3 get-pip.py```
