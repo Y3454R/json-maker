@@ -38,23 +38,27 @@ def index():
 @app.route('/convert', methods=['POST'])
 def convert():
     def extract_placeholders(docx_content):
-        placeholders = set()
-
+        placeholders = []
+    
         # Regular expression to match placeholders in the form {{text}}
         pattern = r"\{\{([^\}]*)\}\}"
-
+    
         for line in docx_content.split('\n'):
             matches = re.findall(pattern, line)
-            placeholders.update(matches)
-
+            for match in matches:
+                if match not in placeholders:
+                    placeholders.append(match)
+    
         return placeholders
 
     def create_json_from_placeholders(placeholders):
-        data = {placeholder: "" for placeholder in placeholders}
-
+        data = {}
+        for placeholder in placeholders:
+            data[placeholder] = ""
+    
         # Convert the dictionary to JSON string
         json_string = json.dumps(data, indent=2)
-
+    
         return json_string
 
     text = request.json['text']
