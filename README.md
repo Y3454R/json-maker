@@ -4,7 +4,7 @@ A tool to create a json string by converting all the placeholders of a docx file
 To use with UI in linax:
 
 #### install  flask:
-install pip: ```curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py```
+install pip: ```curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py``` <br/>
 ```python3 get-pip.py```
 
 install flask: ```python3 -m pip install flask```
