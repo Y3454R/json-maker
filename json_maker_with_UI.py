@@ -37,7 +37,6 @@ def index():
 
 @app.route('/convert', methods=['POST'])
 def convert():
-
     def extract_placeholders(docx_content):
         placeholders = set()
 
@@ -58,10 +57,8 @@ def convert():
 
         return json_string
 
-
     text = request.json['text']
-    
-    placeholders = extract_placeholders(docx_content)
+    placeholders = extract_placeholders(text)
     json_string = create_json_from_placeholders(placeholders)
     
     return json_string
